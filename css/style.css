@@ -12,6 +12,11 @@ body {
 	color:black;
 }
 
+label{
+	display:inline-block;
+	width:150px;
+}
+
 a{
 	text-decoration:none;
 }

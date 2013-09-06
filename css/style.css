@@ -21,6 +21,10 @@ a{
 	text-decoration:none;
 }
 
+td{
+	border-bottom: 1px dashed #000;
+}
+
 #container{
 	width:100%;
 	overflow:auto;

@@ -12,6 +12,11 @@ body {
 	color:black;
 }
 
+footer {
+	position: fixed;
+	bottom: 0;
+}
+
 label{
 	display:inline-block;
 	width:150px;

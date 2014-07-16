@@ -3,14 +3,234 @@
 <head>
 	<title>Jared Mavis Productions</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
-	<script type="text/javascript" src="js/libs/underscore1_6_0.js"></script>
-	<script type="text/javascript" src="js/libs/backbone1_1_2.js"></script>
-	<script type="text/javascript" src="js/libs/jquery1_11_0.js"></script>
-	<script type="text/javascript" src="js/views/baseView.js"></script>
-	<script type="text/javascript" src="js/views/topContentView.js"></script>
 </head>
 <body>
-<div id="container">
+<script type="text/x-handlebars">
+	<div class="navbar">
+		<header>	
+			<h1>Jared Mavis Productions</h1>
+			<h2>Hello World! Welcome to my sight... site</h2>
+		</header>
+		<nav>
+			<ul>
+				<li class = "menuItem">{{#link-to 'home'}}Home{{/link-to}}</li>
+				<li class = "menuItem">{{#link-to 'projects'}}Projects{{/link-to}}</li>
+				<li class = "menuItem">{{#link-to 'resume'}}Resume{{/link-to}}</li>
+				<li class = "menuItem">{{#link-to 'about'}}About Me{{/link-to}}</li>
+				<li class = "menuItem">{{#link-to 'contact'}}Contact Me{{/link-to}}</li>
+			</ul>
+		</nav>
+	</div>
+	{{outlet}}
+</script>
+
+<script type="text/x-handlebars" id="home">
+	<section>
+		<h2>Version 1.0 lives. Site still under construction, but feel free to look around.</h2>
+	</section>
+</script>
+
+<script type="text/x-handlebars" id="projects">
+		<Table>
+			<thead>
+				<tr>
+					<th></th>
+					<th>Project</th>
+					<th>Role</th>
+					<th>Accomplishments</th>
+					<th>Tools</th>
+					<th>Repository</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr> <!--OneDay-->
+					<td>
+						<img src="images/OneDayLogo.png" alt="">
+					</td>
+					<td>
+						<a href="http://oneday-game.com/">One Day</a>
+					</td>
+					<td>Producer, Lead Programmer, Scrum Master</td>
+					<td>
+						<ul>
+							<li>Developed and designed controls, mechanics, GUI, and AI</li>
+							<li>Helped to manage and communicate with cross-disciplinary team of 20 members</li>
+						</ul>
+					</td>
+					<td>Unity with C#</td>
+					<td>
+						<a href="https://github.com/10DaysLeftToLive/TimeWhaleEngine" title="GitHub Repo">One Day GitHub Repository Username:jmavis</a>
+					</td>
+				</tr>
+				<tr> <!--Terrachanics-->
+					<td>
+						<img src="images/TerrachanicsLogo.png" alt="">
+					</td>
+					<td>
+						<a href="http://jobs.energy.gov/terrachanics">Terrachanics- US Department of Energy</a>
+					</td>
+					<td>Programmer</td>
+					<td>
+						<ul>
+							<li>Performed programming tasks involving mobile controls, user interface and Facebook</li>
+						</ul>
+					</td>
+					<td>Unity with JavaScript</td>
+					<td>
+						<a href="https://github.com/kuvick/DOEGame" title="GitHub Repo">Terrachanics GitHub Repository Username:jmavis</a>
+					</td>
+				</tr>
+				<tr> <!--BoxedMeeting-->
+					<td>
+						<img src="images/BoxedMeetingLogo.png" alt="">
+					</td>
+					<td>
+						<a href="https://play.google.com/store/apps/details?id=com.JaredMavis.boxedmeeting&hl=en">Boxed Meeting</a>
+					</td>
+					<td>Programmer</td>
+					<td>
+						<ul>
+							<li>Independently developed and released an Android application to the Google Play Market</li>
+							<li>Integrated with Google Analytics and AdMob</li>
+						</ul>
+					</td>
+					<td>Unity with JavaScript</td>
+					<td>
+						<a href="https://github.com/jmavis/BoxedMeeting" title="GitHub Repo">Boxed Meeting GitHub Repository Username:jmavis</a>
+					</td>
+				</tr>
+				<tr> <!--JaredMavisProductions.com-->
+					<td>
+						
+					</td>
+					<td>
+						<a href="index.html">JaredMavisProductions.com</a>
+					</td>
+					<td>Programmer, Designer</td>
+					<td>
+						<ul>
+							<li>Independently produced and design the site you are currently on</li>
+						</ul>
+					</td>
+					<td>HTML5, CSS3 and JavaScript</td>
+					<td>
+						<a href="https://github.com/jmavis/JaredMavisProductions" title="GitHub Repo">Website GitHub Repository Username:jmavis</a>
+					</td>
+				</tr>
+				<tr> <!--Echo-->
+					<td>
+						<img src="images/EchoLogo.png" alt="" height="128" width="128">
+					</td>
+					<td>
+						<a href="http://people.ucsc.edu/~swhittak/papers/Echo-CHI2013-Accepted-Final.pdf">Echo- UCSC Social Sciences</a>
+					</td>
+					<td>Programmer, UI Designer</td>
+					<td>
+						<ul>
+							<li>Created system for a multi-staged survey program by integrating with existing application</li>
+							<li>Quickly learned large Java code base and created significant weekly deliverables</li>
+							<li>Created and altered Python scripts for survey data aggregation and formatting</li>
+							<li>Successful private release in April 2013</li>
+							<li>Worked in a team of 2</li>
+							<li>
+								<a href="http://vimeo.com/66118447" title="HCI presentation">HCI Presentation</a>
+							</li>
+						</ul>
+					</td>
+					<td>Java</td>
+					<td>
+						<a>Code samples available upon request</a>
+					</td>
+				</tr>
+				<tr> <!--eBay-->
+					<td>
+						<img src="images/MantisVideoLogo.png" alt="" height="128" width="128">
+					</td>
+					<td>
+						<a>Mantis Video- eBay Research</a>
+					</td>
+					<td>Programmer, UI Designer</td>
+					<td>
+						<ul>
+							<li>Was lead on Android client development and usability under mentorship of eBay research</li>
+							<li>Worked in Java and  followed scrum practices over the 20 week project in a team of 5</li>
+							<li>Designed and implemented Android application to communicate with online server</li>
+							<li>Interfaced with REST style Amazon S2/S3 and Heroku cloud services</li>
+							<li>Worked in a team of 5</li>
+						</ul>
+					</td>
+					<td>Java</td>
+					<td>
+						<a>Code samples available upon request</a>
+					</td>
+				</tr>
+				<tr> <!--SlugMood-->
+					<td>
+						<img src="images/SlugmoodLogo.png" alt="" height="128" width="128">
+					</td>
+					<td>
+						<a>Slugmood- UCSC Social Sciences</a>
+					</td>
+					<td>Programmer, UI Designer, Scrum Master</td>
+					<td>
+						<ul>
+							<li>Independently developed and released an Android application to the Google Play Market</li>
+							<li>Integrated with Google Analytics and AdMob</li>
+							<li>Worked in a team of 7</li>
+						</ul>
+					</td>
+					<td>Java</td>
+					<td>
+						<a>Code samples available upon request</a>
+					</td>
+				</tr>
+				<tr> <!--13 Days-->
+					<td>
+						<img src="images/13DaysLogo.png" alt="" height="128" width="128">
+					</td>
+					<td>
+						<a href="http://latenitegames.pbworks.com/w/page/49854787/FrontPage">13 Days Game</a>
+					</td>
+					<td>Programmer, Scrum Master</td>
+					<td>
+						<ul>
+							<li>I was responsible for UI design and implementation, controls as well as AI</li>
+							<li>Worked in a team of 4</li>
+						</ul>
+					</td>
+					<td>C#, XNA</td>
+					<td>
+						<a>Code samples available upon request</a>
+					</td>
+				</tr>
+			</tbody>
+		</Table>
+</script>
+<script type="text/x-handlebars" id="resume">
+	<section>
+		<embed src="JaredMavis_Resume.pdf" style="width:98%; height:1100px;">
+	</section>
+</script>
+
+<script type="text/x-handlebars" id="about">
+	<p>
+		I am a recent grad who is looking to improve the world through the use of software and code-fu.<br>
+		I like to constantly learn new things and am currently focusing on Web Development(Looking at this site, I need to focus on it :)) Databases and Japanese.<br>
+		In my spare time I like to draw (<span><a href="http://jmavis.deviantart.com/">http://jmavis.deviantart.com/</a></span>), watch anime, play games and code.<br>
+		My github account can be found here <span><a href="https://github.com/jmavis">https://github.com/jmavis</a></span><br>
+		For some coding challenges I do check out here <span><a href="https://www.codeeval.com/public/c84244c65b7b4cd905b5f005f9762612dcf91e61/">CodeEval</a></span><br>
+	</p>
+</script>
+
+<script type="text/x-handlebars" id="contact">
+	<h1>Contact Me</h1>
+	<img src="images/EmailPic.png" alt="JaredMavis at Outlook dot com">
+</script>
+
+<!-- <section>
+			<h2>Version 1.0 lives. Site still under construction, but feel free to look around.</h2>
+		</section> -->
+<!-- <div id="container">
 	<header>	
 		<h1>Jared Mavis Productions</h1>
 		<h2>Hello World! Welcome to my sight... site</h2>
@@ -27,10 +247,15 @@
 	<section>
 		<h2>Version 1.0 lives. Site still under construction, but feel free to look around.</h2>
 	</section>
-</div> <!-- End Container -->
+</div>
 	<div style="clear:both"></div>
 	<footer>
 		Developed by Jared Mavis.
-	</footer>
+	</footer> -->
+
+	<script type="text/javascript" src="js/libs/handlebars-v1.3.0.js"></script>
+	<script type="text/javascript" src="js/libs/jquery.js"></script>
+	<script type="text/javascript" src="js/libs/ember.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>

@@ -1,36 +1,83 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Jared Mavis Productions</title>
+	<title>JaredMavis.com</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="stylesheet" href="css/projects.css" type="text/css">
 </head>
 <body>
 <script type="text/x-handlebars">
 	<div class="navbar">
 		<header>	
 			<h1>Jared Mavis Productions</h1>
-			<h2>Hello World! Welcome to my sight... site</h2>
 		</header>
-		<nav>
-			<ul>
-				<li class = "menuItem">{{#link-to 'home'}}Home{{/link-to}}</li>
-				<li class = "menuItem">{{#link-to 'projects'}}Projects{{/link-to}}</li>
-				<li class = "menuItem">{{#link-to 'resume'}}Resume{{/link-to}}</li>
-				<li class = "menuItem">{{#link-to 'about'}}About Me{{/link-to}}</li>
-				<li class = "menuItem">{{#link-to 'contact'}}Contact Me{{/link-to}}</li>
-			</ul>
-		</nav>
+		<ul class="nav nav-pills" role="tablist">
+		  	<li id="Home" class = "menuItem">{{#link-to 'home'}}Home{{/link-to}}</li>
+			<li id="Projects" class = "menuItem">{{#link-to 'projects'}}Projects{{/link-to}}</li>
+			<li id="Resume" class = "menuItem">{{#link-to 'resume'}}Resume{{/link-to}}</li>
+			<li id="About" class = "menuItem">{{#link-to 'about'}}About{{/link-to}}</li>
+			<li id="Contact" class = "menuItem">{{#link-to 'contact'}}Contact{{/link-to}}</li>
+			<a class="btn btn-default navbar-btn navbar-right" href="http://github.com/jmavis">GitHub for jmavis</a>
+		</ul> 
 	</div>
 	{{outlet}}
 </script>
 
 <script type="text/x-handlebars" id="home">
-	<section>
-		<h2>Version 1.0 lives. Site still under construction, but feel free to look around.</h2>
-	</section>
+	{{#each}}
+		<div>{{title}}</div>
+	{{/each}}
 </script>
 
-<script type="text/x-handlebars" id="projects">
+<script  type="text/x-handlebars" id="projects">
+{{#each}}
+	<div class="project">
+		<div class="project-image-content ui-block">
+			<img class="project-icon ui-block" {{bind-attr src="project_image"}}>
+		</div>
+		<div class="project-content ui-block">
+			<div class="project-header">
+				<div class="project-roles ui-block">{{role}}</div>
+				<div class="project-timeline ui-block">{{timeline}}</div>
+			</div>
+
+			<div class="project-name ui-block">{{project_name}}</div>
+
+
+			<div class="project-company">
+				{{#if worked_for.website}}
+					<a {{bind-attr href=worked_for.website}}>{{worked_for.name}}</a>
+				{{else}}
+					{{worked_for.name}}
+				{{/if}}
+
+			</div>
+			<ul class="project-accomplishments-list">
+				{{#each obj in this.accomplishments}}
+					<li>{{obj}}</li>
+				{{/each}}
+            </ul>
+            <div class="project-skills-container">
+            	Skills:
+           		{{skills}}
+            </div>
+            <div class="project-tools-container">
+            	Tools:
+           		{{tools}}
+            </div>
+            {{#if repository}}
+            	<a {{bind-attr href=repository}}>Repository</a>
+			{{/if}}
+		</div>
+	</div>
+{{/each}}
+</script>
+
+<script type="text/x-handlebars" id="project-list">
+
+</script>
+
+<script type="text/x-handlebars" id="old-projects">
 		<Table>
 			<thead>
 				<tr>
@@ -43,80 +90,6 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr> <!--OneDay-->
-					<td>
-						<img src="images/OneDayLogo.png" alt="">
-					</td>
-					<td>
-						<a href="http://oneday-game.com/">One Day</a>
-					</td>
-					<td>Producer, Lead Programmer, Scrum Master</td>
-					<td>
-						<ul>
-							<li>Developed and designed controls, mechanics, GUI, and AI</li>
-							<li>Helped to manage and communicate with cross-disciplinary team of 20 members</li>
-						</ul>
-					</td>
-					<td>Unity with C#</td>
-					<td>
-						<a href="https://github.com/10DaysLeftToLive/TimeWhaleEngine" title="GitHub Repo">One Day GitHub Repository Username:jmavis</a>
-					</td>
-				</tr>
-				<tr> <!--Terrachanics-->
-					<td>
-						<img src="images/TerrachanicsLogo.png" alt="">
-					</td>
-					<td>
-						<a href="http://jobs.energy.gov/terrachanics">Terrachanics- US Department of Energy</a>
-					</td>
-					<td>Programmer</td>
-					<td>
-						<ul>
-							<li>Performed programming tasks involving mobile controls, user interface and Facebook</li>
-						</ul>
-					</td>
-					<td>Unity with JavaScript</td>
-					<td>
-						<a href="https://github.com/kuvick/DOEGame" title="GitHub Repo">Terrachanics GitHub Repository Username:jmavis</a>
-					</td>
-				</tr>
-				<tr> <!--BoxedMeeting-->
-					<td>
-						<img src="images/BoxedMeetingLogo.png" alt="">
-					</td>
-					<td>
-						<a href="https://play.google.com/store/apps/details?id=com.JaredMavis.boxedmeeting&hl=en">Boxed Meeting</a>
-					</td>
-					<td>Programmer</td>
-					<td>
-						<ul>
-							<li>Independently developed and released an Android application to the Google Play Market</li>
-							<li>Integrated with Google Analytics and AdMob</li>
-						</ul>
-					</td>
-					<td>Unity with JavaScript</td>
-					<td>
-						<a href="https://github.com/jmavis/BoxedMeeting" title="GitHub Repo">Boxed Meeting GitHub Repository Username:jmavis</a>
-					</td>
-				</tr>
-				<tr> <!--JaredMavisProductions.com-->
-					<td>
-						
-					</td>
-					<td>
-						<a href="index.html">JaredMavisProductions.com</a>
-					</td>
-					<td>Programmer, Designer</td>
-					<td>
-						<ul>
-							<li>Independently produced and design the site you are currently on</li>
-						</ul>
-					</td>
-					<td>HTML5, CSS3 and JavaScript</td>
-					<td>
-						<a href="https://github.com/jmavis/JaredMavisProductions" title="GitHub Repo">Website GitHub Repository Username:jmavis</a>
-					</td>
-				</tr>
 				<tr> <!--Echo-->
 					<td>
 						<img src="images/EchoLogo.png" alt="" height="128" width="128">
@@ -257,5 +230,6 @@
 	<script type="text/javascript" src="js/libs/jquery.js"></script>
 	<script type="text/javascript" src="js/libs/ember.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/views/header.js"></script>
 </body>
 </html>

@@ -1,15 +1,20 @@
+@import url("./bootstrap.min.css");
+@import url("./bootstrap-theme.css");
+@import url("./bootstrap.min.css");
+@import url("./bootstrap.min.css");
+
 *{
 	margin: 0 auto 0 auto;
 	text-align:left;
 }
 
 .active {
-	color: green;
+	font-weight: bold;
 }
 
 body {
-	margin:0;
-	padding:0;
+	margin-right: 10px;
+	margin-left: 10px;
 	text-align:left;
 	font-size:13px;
 	font-family:arial, helvetica, sens-serif;
@@ -72,4 +77,12 @@ nav li a, nave li a:visited{
 	font-size:16px;
 	font-weight:bold;
 	padding: 0 15px 0 15px;
+}
+
+.ui-block {
+	display: inline-block;
+}
+
+.ui-float-right {
+	float: right;
 }

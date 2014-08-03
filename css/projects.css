@@ -1,0 +1,21 @@
+.project-roles{
+	font-size: 2em;
+}
+
+.project-timeline{
+	font-size: 1.5em;
+	margin-left: 10px;
+}
+
+.project-image-content{
+	width: 128px;
+	vertical-align: top;
+}
+
+.project-content{
+	margin-left: 10px;
+}
+
+.project-name{
+	font-size: 1.5em;
+}

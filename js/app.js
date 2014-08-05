@@ -2,8 +2,7 @@ App = Ember.Application.create();
 
 App.Router.map(function(){
 	this.resource('home');
-	this.resource('projects');
-	this.resource('project', {path : ":project"});
+	this.resource('ability', {path : "projects/:ability"});
 	this.resource('resume');
 	this.resource('about');
 	this.resource('contact');
@@ -13,7 +12,9 @@ App.Router.map(function(){
 // 	window.projectJson = json; 
 // });
 
+
 var projects = [{
+	"id": 0,
 	"project_image": null,
 	"project_name": "Project Undisclosed Currently",
 	"worked_for": {
@@ -23,10 +24,11 @@ var projects = [{
 	"role": "Member of Technical Staff",
 	"timeline": "September 2013-Present",
 	"skills": ["Javascript", "Objective C", "iOS", "Android", "iBeacons", "Location", "Cordova"],
-	"tools": ["JIRA", "Bitbucket", "Appium", "Bluebird", "Backbone", "jQuery", "Git", "Kanban"],
-	"accomplishments": ["Did stuff"],
+	"tools": ["JIRA", "Bitbucket", "Appium", "Bluebird.js", "Backbone.js", "jQuery", "Git", "Kanban"],
+	"accomplishments": [],
 	"repository": null,
 }, {
+	"id": 1,
 	"project_image": "images/OneDayLogo.png",
 	"project_name": "One Day Game",
 	"worked_for": {
@@ -42,6 +44,7 @@ var projects = [{
 						"Responsible for creating and maintaining UML class, state and sequence diagrams"],
 	"repository": "https://github.com/10DaysLeftToLive/TimeWhaleEngine",
 }, {
+	"id": 2,
 	"project_image": "images/TerrachanicsLogo.png",
 	"project_name": "Terrachanics",
 	"worked_for": {
@@ -55,6 +58,7 @@ var projects = [{
 	"accomplishments": ["Performed programming tasks involving mobile/pc controls, user interface and Facebook integration"],
 	"repository": "https://github.com/kuvick/DOEGame",
 }, {
+	"id": 3,
 	"project_image": "images/BoxedMeetingLogo.png",
 	"project_name": "Boxed Meeting App",
 	"worked_for": {
@@ -70,6 +74,7 @@ var projects = [{
 						"Designed System for dynamically sizing elements and text to account for Android screen size vairation"],
 	"repository": "https://github.com/jmavis/BoxedMeeting",
 }, {
+	"id": 4,
 	"project_image": null,
 	"project_name": "JaredMavis.com",
 	"worked_for": {
@@ -84,6 +89,7 @@ var projects = [{
 						"Learned Ember and handlebars along with getting experience in using bootstrap.js"],
 	"repository": "https://github.com/jmavis/JaredMavisProductions",
 }, {
+	"id": 5,
 	"project_image": "images/EchoLogo.png",
 	"project_name": "Echo",
 	"worked_for": {
@@ -100,6 +106,7 @@ var projects = [{
 						"Worked in a team of 2"],
 	"repository": null,
 }, {
+	"id": 6,
 	"project_image": "images/MantisVideoLogo.png",
 	"project_name": "Mantis Video",
 	"worked_for": {
@@ -117,6 +124,7 @@ var projects = [{
 						"Worked in a team of 5"],
 	"repository": null,
 }, {
+	"id": 7,
 	"project_image": "images/SlugmoodLogo.png",
 	"project_name": "Slugmood",
 	"worked_for": {
@@ -134,6 +142,33 @@ var projects = [{
 	"repository": null,
 }];
 
+generateProjectsMetaData = function(projects){
+	var projectsInformation = {
+		projects : projects,
+		abilitiesMapping : {},
+	};
+	var tools = {};
+	var skills = {}
+	projects.map(function(project){
+		project.skills.map(function(skill){
+			if (!projectsInformation.abilitiesMapping[skill]) projectsInformation.abilitiesMapping[skill] = [];
+			projectsInformation.abilitiesMapping[skill].push(project);
+			skills[skill] = skill;
+		});
+		project.tools.map(function(tool){
+			if (!projectsInformation.abilitiesMapping[tool]) projectsInformation.abilitiesMapping[tool] = [];
+			projectsInformation.abilitiesMapping[tool].push(project);
+			tools[tool] = tool;			
+		});
+	});
+	projectsInformation.tools = Object.keys(tools);
+	projectsInformation.skills = Object.keys(skills);
+
+	return projectsInformation;
+};
+
+var projectsInformationDebug = generateProjectsMetaData(projects);
+
 var posts = [{
 	"title": "hai",
 }, {
@@ -150,8 +185,20 @@ App.HomeRoute = Ember.Route.extend({
 	}
 });
 
-App.ProjectsRoute = Ember.Route.extend({
-	model: function(){
-		return projects;
-	},
+filterProjectsForAbility = function(abilityMap, ability){
+	if (!ability || ability === "all") return projects;
+	else return abilityMap[ability];
+}
+
+App.projectsController = Ember.Route.extend({
+
 });
+
+App.AbilityRoute = Ember.Route.extend({
+  model: function(params) {
+  	console.log("params ability = " + params.ability);
+  	projectsInformationDebug.projects = filterProjectsForAbility(projectsInformationDebug.abilitiesMapping, params.ability);
+  	console.log("Projects = " + projectsInformationDebug.projects);
+	return projectsInformationDebug;	
+  }
+})

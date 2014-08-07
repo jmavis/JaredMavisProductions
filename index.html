@@ -13,7 +13,7 @@
 		</header>
 		<ul class="nav nav-pills" role="tablist">
 		  	<li id="Home" class = "menuItem">{{#link-to 'home'}}Home{{/link-to}}</li>
-			<li id="Projects" class = "menuItem">{{#link-to 'ability' 'all'}}Projects{{/link-to}}</li>
+			<li id="Projects" class = "menuItem">{{#link-to 'skill' 'all'}}Projects{{/link-to}}</li>
 			<li id="Resume" class = "menuItem">{{#link-to 'resume'}}Resume{{/link-to}}</li>
 			<li id="About" class = "menuItem">{{#link-to 'about'}}About{{/link-to}}</li>
 			<li id="Contact" class = "menuItem">{{#link-to 'contact'}}Contact{{/link-to}}</li>
@@ -30,26 +30,30 @@
 	{{/each}}
 </script>
 
-<script  type="text/x-handlebars" id="ability">
-<div class="project-filters-container">
+<script  type="text/x-handlebars" id="skills">
+<div class="skills-filters-container">
 	<span>Skills</span>
-	<div class="project-skills-filter">
+	<div class="skills-filter">
 		{{#each skill in skills}}
-			{{#link-to 'ability' skill}}
+			{{#link-to 'skill' skill}}
 				<span class="btn btn-default">{{skill}}</span>
 			{{/link-to}}
 		{{/each}}
 	</div>
 	<span>Tools</span>
-	<div class="project-tools-filter">
+	<div class="tools-filter">
 		{{#each tool in tools}}
-			{{#link-to 'ability' tool}}
+			{{#link-to 'skill' tool}}
 				<span class="btn btn-default">{{tool}}</span>
 			{{/link-to}}
 		{{/each}}
 	</div>
 </div>
-{{#each projects}}
+{{outlet}}
+</script>
+
+<script  type="text/x-handlebars" id="skill">
+{{#each}}
 	<div class="project">
 		<div class="project-image-content ui-block">
 			<img class="project-icon ui-block" {{bind-attr src="project_image"}}>
@@ -91,6 +95,7 @@
 	</div>
 {{/each}}
 </script>
+
 
 <script type="text/x-handlebars" id="resume">
 	<section>

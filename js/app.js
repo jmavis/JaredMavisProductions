@@ -2,7 +2,9 @@ App = Ember.Application.create();
 
 App.Router.map(function(){
 	this.resource('home');
-	this.resource('ability', {path : "projects/:ability"});
+	this.resource('skills', function(){
+		this.resource('skill' , {path : ":skill"});
+	});
 	this.resource('resume');
 	this.resource('about');
 	this.resource('contact');
@@ -190,15 +192,15 @@ filterProjectsForAbility = function(abilityMap, ability){
 	else return abilityMap[ability];
 }
 
-App.projectsController = Ember.Route.extend({
-
-});
-
-App.AbilityRoute = Ember.Route.extend({
+App.SkillsRoute = Ember.Route.extend({
   model: function(params) {
-  	console.log("params ability = " + params.ability);
-  	projectsInformationDebug.projects = filterProjectsForAbility(projectsInformationDebug.abilitiesMapping, params.ability);
-  	console.log("Projects = " + projectsInformationDebug.projects);
 	return projectsInformationDebug;	
   }
-})
+});
+
+App.SkillRoute = Ember.Route.extend({
+	model: function(params) {
+		console.log("params ability = " + params.skill);
+		return filterProjectsForAbility(projectsInformationDebug.abilitiesMapping, params.skill);	
+	}
+});

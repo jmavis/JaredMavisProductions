@@ -55,9 +55,6 @@
 <script  type="text/x-handlebars" id="skill">
 {{#each}}
 	<div class="project">
-		<div class="project-image-content ui-block">
-			<img class="project-icon ui-block" {{bind-attr src="project_image"}}>
-		</div>
 		<div class="project-content ui-block">
 			<div class="project-header">
 				<div class="project-roles ui-block">{{role}}</div>
@@ -81,16 +78,19 @@
 				{{/each}}
             </ul>
             <div class="project-skills-container">
-            	Skills:
+            	<span class="header">Skills:</span>
            		{{skills}}
             </div>
+            	<span class="header">dfnvjnv:</span>
             <div class="project-tools-container">
-            	Tools:
            		{{tools}}
             </div>
             {{#if repository}}
             	<a {{bind-attr href=repository}}>Repository</a>
 			{{/if}}
+		</div>
+		<div class="project-image-content ui-block">
+			<img class="project-icon ui-block" {{bind-attr src="project_image"}}>
 		</div>
 	</div>
 {{/each}}

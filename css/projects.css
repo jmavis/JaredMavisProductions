@@ -19,3 +19,12 @@
 .project-name{
 	font-size: 1.5em;
 }
+
+.project{
+	border-top: solid;
+	padding-left: 20px;
+}
+
+.project-skills-container{
+	font-size: 30px
+}

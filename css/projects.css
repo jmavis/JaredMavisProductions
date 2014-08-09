@@ -3,13 +3,12 @@
 }
 
 .project-timeline{
+	float: right;
 	font-size: 1.5em;
-	margin-left: 10px;
 }
 
-.project-image-content{
-	width: 128px;
-	vertical-align: top;
+.project-company{
+	font-size: 1.5em;
 }
 
 .project-content{
@@ -25,6 +24,6 @@
 	padding-left: 20px;
 }
 
-.project-skills-container{
-	font-size: 30px
+.skills-filters-container{
+	padding-bottom: 20px;
 }

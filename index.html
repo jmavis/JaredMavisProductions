@@ -4,6 +4,7 @@
 	<title>JaredMavis.com</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
 	<link rel="stylesheet" href="css/projects.css" type="text/css">
+	<link rel="stylesheet" href="css/about.css" type="text/css">
 </head>
 <body>
 <script type="text/x-handlebars">
@@ -32,15 +33,15 @@
 
 <script  type="text/x-handlebars" id="skills">
 <div class="skills-filters-container">
-	<span>Skills</span>
+	<h2>Skills</h2>
 	<div class="skills-filter">
 		{{#each skill in skills}}
 			{{#link-to 'skill' skill}}
-				<span class="btn btn-default">{{skill}}</span>
+				<span class="btn btn-default ">{{skill}}</span>
 			{{/link-to}}
 		{{/each}}
 	</div>
-	<span>Tools</span>
+	<h2>Tools</h2>
 	<div class="tools-filter">
 		{{#each tool in tools}}
 			{{#link-to 'skill' tool}}
@@ -57,40 +58,35 @@
 	<div class="project">
 		<div class="project-content ui-block">
 			<div class="project-header">
-				<div class="project-roles ui-block">{{role}}</div>
+				<div class="project-roles">{{role}}</div>
+				<div class="project-company ui-block">
+					{{#if worked_for.website}}
+						<a {{bind-attr href=worked_for.website}}>{{worked_for.name}}</a>
+					{{else}}
+						{{worked_for.name}}
+					{{/if}}
+				</div>
 				<div class="project-timeline ui-block">{{timeline}}</div>
 			</div>
 
 			<div class="project-name ui-block">{{project_name}}</div>
-
-
-			<div class="project-company">
-				{{#if worked_for.website}}
-					<a {{bind-attr href=worked_for.website}}>{{worked_for.name}}</a>
-				{{else}}
-					{{worked_for.name}}
-				{{/if}}
-
-			</div>
+			
 			<ul class="project-accomplishments-list">
 				{{#each obj in this.accomplishments}}
 					<li>{{obj}}</li>
 				{{/each}}
             </ul>
             <div class="project-skills-container">
-            	<span class="header">Skills:</span>
+            	<span>Skills:</span>
            		{{skills}}
             </div>
-            	<span class="header">dfnvjnv:</span>
             <div class="project-tools-container">
+            	<span>Tools:</span>
            		{{tools}}
             </div>
             {{#if repository}}
             	<a {{bind-attr href=repository}}>Repository</a>
 			{{/if}}
-		</div>
-		<div class="project-image-content ui-block">
-			<img class="project-icon ui-block" {{bind-attr src="project_image"}}>
 		</div>
 	</div>
 {{/each}}
@@ -104,7 +100,7 @@
 </script>
 
 <script type="text/x-handlebars" id="about">
-	<p>
+	<p class="about-content">
 		I am a software engineer who is looking to improve the world through the use of software and code-fu.<br>
 		I like to constantly learn new things and am currently focusing on Web and Mobile<br>
 		In my spare time I like to draw (<span><a href="http://jmavis.deviantart.com/">http://jmavis.deviantart.com/</a></span>), watch anime, play games and code.<br>

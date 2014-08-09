@@ -10,11 +10,6 @@ App.Router.map(function(){
 	this.resource('contact');
 });
 
-// $.getJSON("./data/projects.json", function(json){
-// 	window.projectJson = json; 
-// });
-
-
 var projects = [{
 	"id": 0,
 	"project_image": null,
@@ -25,7 +20,7 @@ var projects = [{
 	},
 	"role": "Member of Technical Staff",
 	"timeline": "September 2013-Present",
-	"skills": ["Javascript", "Objective C", "iOS", "Android", "iBeacons", "Location", "Cordova"],
+	"skills": ["Javascript", "Objective C", "iOS", "Java", "Android", "iBeacons", "Location", "Cordova"],
 	"tools": ["JIRA", "Bitbucket", "Appium", "Bluebird.js", "Backbone.js", "jQuery", "Git", "Kanban"],
 	"accomplishments": [],
 	"repository": null,

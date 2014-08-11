@@ -1,13 +1,17 @@
 App = Ember.Application.create();
 
 App.Router.map(function(){
-	this.resource('home');
+	this.resource('index');
 	this.resource('skills', function(){
 		this.resource('skill' , {path : ":skill"});
 	});
 	this.resource('resume');
 	this.resource('about');
 	this.resource('contact');
+});
+
+App.Router.reopen({
+  rootURL: '/home'
 });
 
 var projects = [{
@@ -194,8 +198,20 @@ App.SkillsRoute = Ember.Route.extend({
 });
 
 App.SkillRoute = Ember.Route.extend({
-	model: function(params) {
-		console.log("params ability = " + params.skill);
+	model: function(params){
 		return filterProjectsForAbility(projectsInformationDebug.abilitiesMapping, params.skill);	
+	}
+});
+
+posts = [{
+	title: "Webstie update in progress",
+	date: "August 10 2014",
+	author: "Jared",
+	content: "Hello, welcome to my site. I am currently in the process of updating everything to be based around ember.js. Feel free to look around.",
+}]
+
+App.IndexRoute = Ember.Route.extend({
+	model: function(params){
+		return posts;
 	}
 });

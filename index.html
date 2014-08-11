@@ -5,6 +5,7 @@
 	<link rel="stylesheet" href="css/style.css" type="text/css">
 	<link rel="stylesheet" href="css/projects.css" type="text/css">
 	<link rel="stylesheet" href="css/about.css" type="text/css">
+	<link rel="stylesheet" href="css/post.css" type="text/css">
 </head>
 <body>
 <script type="text/x-handlebars">
@@ -27,6 +28,16 @@
 
 <script type="text/x-handlebars" id="home">
 	{{#each}}
+		<div class="post">
+			<div class="post-header">
+				<div class="post-title ui-block">{{title}}</div>
+				<div class="post-date">{{date}}</div>
+				<div class="post-author">{{author}}</div>
+			</div>
+			<div class="post-content">
+				{{content}}
+			</div>
+		</div>
 		<div>{{title}}</div>
 	{{/each}}
 </script>

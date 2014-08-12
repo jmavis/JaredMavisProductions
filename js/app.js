@@ -1,17 +1,14 @@
 App = Ember.Application.create();
 
 App.Router.map(function(){
-	this.resource('index');
-	this.resource('skills', function(){
+	this.resource('home');
+	this.resource('projects', function(){
 		this.resource('skill' , {path : ":skill"});
 	});
 	this.resource('resume');
 	this.resource('about');
 	this.resource('contact');
-});
-
-App.Router.reopen({
-  rootURL: '/home'
+ 	this.route("fourOhFour", { path: "*path"});
 });
 
 var projects = [{
@@ -191,7 +188,7 @@ filterProjectsForAbility = function(abilityMap, ability){
 	else return abilityMap[ability];
 }
 
-App.SkillsRoute = Ember.Route.extend({
+App.ProjectsRoute = Ember.Route.extend({
   model: function(params) {
 	return projectsInformationDebug;	
   }
@@ -204,14 +201,14 @@ App.SkillRoute = Ember.Route.extend({
 });
 
 posts = [{
-	title: "Webstie update in progress",
+	title: "Website update in progress",
 	date: "August 10 2014",
 	author: "Jared",
 	content: "Hello, welcome to my site. I am currently in the process of updating everything to be based around ember.js. Feel free to look around.",
 }]
 
-App.IndexRoute = Ember.Route.extend({
+App.FourOhFourRoute = Ember.Route.extend({
 	model: function(params){
-		return posts;
+		return params;
 	}
 });

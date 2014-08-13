@@ -23,7 +23,8 @@ var projects = [{
 	"timeline": "September 2013-Present",
 	"skills": ["Javascript", "Objective C", "iOS", "Java", "Android", "iBeacons", "Location", "Cordova"],
 	"tools": ["JIRA", "Bitbucket", "Appium", "Bluebird.js", "Backbone.js", "jQuery", "Git", "Kanban"],
-	"accomplishments": [],
+	"accomplishments": ["Working using cordova for an iOS and Android application",
+						"Have done all native Objective C and Java coding in addition to signifigant contributions to the JavaScript web app"],
 	"repository": null,
 }, {
 	"id": 1,

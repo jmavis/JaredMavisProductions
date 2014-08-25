@@ -23,8 +23,11 @@ var projects = [{
 	"timeline": "September 2013-Present",
 	"skills": ["Javascript", "Objective C", "iOS", "Java", "Android", "iBeacons", "Location", "Cordova"],
 	"tools": ["JIRA", "Bitbucket", "Appium", "Bluebird.js", "Backbone.js", "jQuery", "Git", "Kanban"],
-	"accomplishments": ["Working using cordova for an iOS and Android application",
-						"Have done all native Objective C and Java coding in addition to signifigant contributions to the JavaScript web app"],
+	"accomplishments": ["Working using Cordova for a web app on iOS and Android",
+						"Handling all native Objective-C and Java programming in addition to the JavaScript web app",
+						"Using Backbone, Bluebird, jQuery, and Require.",
+						"Developed location matching algorithms using Android and iOS location APIs",
+						"Developed coding standards and project management tools"],
 	"repository": null,
 }, {
 	"id": 1,

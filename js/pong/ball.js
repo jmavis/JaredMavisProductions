@@ -28,21 +28,15 @@ Pong.Objects.Ball = function(canvas){
 
 			if (x <= 0){
 				xVelocity *= -1;
-				console.log("left x");
 				x = 0
 			} else if (x >= canvas.width){
 				xVelocity *= -1;
-				console.log("right x");
 				x = canvas.width;
 			} 
 
 
 			x += xVelocity * modifier;
 			y += yVelocity * modifier;
-			console.log("(" + x + ", " + y + ")");
-
-			
-			
 		},
 	};
 };

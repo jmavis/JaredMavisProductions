@@ -1,4 +1,3 @@
-console.log("hai");
 Pong.Objects.Ball = function(canvas){
 	var x = canvas.width/2;
 	var y = canvas.height/2;

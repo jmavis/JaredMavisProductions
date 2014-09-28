@@ -26,8 +26,7 @@ var main = function () {
 	render();
 
 	then = now;
-
-	// Request to do this again ASAP
+	
 	requestAnimationFrame(main);
 };
 

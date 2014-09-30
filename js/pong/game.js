@@ -1,7 +1,12 @@
 var canvas = document.getElementById('pongCanvas');
 var context = canvas.getContext('2d');
 
+var objects = [];
 var ball = new Pong.Objects.Ball(canvas);
+objects.push(ball);
+
+var player = new Pong.Objects.Player(canvas);
+objects.push(player);
 
 var playing = true;
 
@@ -10,11 +15,15 @@ requestAnimationFrame = w.requestAnimationFrame || w.webkitRequestAnimationFrame
 
 function render(){
 	context.clearRect(0, 0, canvas.width, canvas.height);
-	ball.render();
+	for (var i = 0, length = objects.length; i < length; i++){
+		objects[i].render();
+	}
 } 
 
 function update(modifier){
-	ball.update(modifier);
+	for (var i = 0, length = objects.length; i < length; i++){
+		objects[i].update(modifier);
+	}
 }
 
 var then = Date.now();

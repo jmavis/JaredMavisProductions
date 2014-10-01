@@ -26,11 +26,20 @@ function update(modifier){
 	}
 }
 
+var keysDown = {};
+
+addEventListener("keydown", function (e) {
+	keysDown[e.keyCode] = true;
+}, false);
+
+addEventListener("keyup", function (e) {
+	delete keysDown[e.keyCode];
+}, false);
+
 var then = Date.now();
 var main = function () {
 	var now = Date.now();
 	var delta = now - then;
-
 	update(delta / 1000);
 	render();
 

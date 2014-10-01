@@ -1,32 +1,17 @@
 Pong.Objects.Player = function(canvas){
-	var playerWidth = 10;
-	var playerHeight = 20;
-	var xPos = canvas.width-10;
-	var yPos = canvas.height/2;;
-	var velocity = PLAYER_VELOCITY;
+	var paddle = new Pong.Objects.Paddle(canvas);
 
-	function onKeyboardUp(timeModifier){
-		yPos += velocity * timeModifier;
-	};
-
-	function onKeyboardDown(timeModifier){
-		yPos -= velocity * timeModifier;
-	};
-
-	function render(){
-		var context = canvas.getContext('2d');
-		var radius = 10;
-
-		context.beginPath();
-		context.arc(xPos, yPos, radius, 0, 2 * Math.PI, false);
-		context.fillStyle = 'white';
-		context.fill();
-	};
+	function update(timeModifier){
+		if (UP_KEY in keysDown){
+			paddle.moveUp(timeModifier);
+		} // Note no else so we allow the user to press both at the same time and stay in place
+		if (DOWN_KEY in keysDown){
+			paddle.moveDown(timeModifier);
+		}
+	}
 
 	return {
-		render: render,
-		update: function(){},
-		onKeyboardUp: onKeyboardUp,
-		onKeyboardDown: onKeyboardDown,
+		render: paddle.render,
+		update: update,
 	};
 }

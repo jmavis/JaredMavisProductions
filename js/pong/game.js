@@ -8,6 +8,9 @@ objects.push(ball);
 var player = new Pong.Objects.Player(canvas);
 objects.push(player);
 
+var computer = new Pong.Objects.Computer(canvas, ball);
+objects.push(computer);
+
 var playing = true;
 
 var w = window;

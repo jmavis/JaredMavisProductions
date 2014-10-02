@@ -1,5 +1,5 @@
 Pong.Objects.Player = function(canvas){
-	var paddle = new Pong.Objects.Paddle(canvas);
+	var paddle = new Pong.Objects.Paddle(canvas, canvas.width-40, canvas.height/2);
 
 	function update(timeModifier){
 		if (UP_KEY in keysDown){

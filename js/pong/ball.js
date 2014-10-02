@@ -37,5 +37,6 @@ Pong.Objects.Ball = function(canvas){
 			x += xVelocity * modifier;
 			y += yVelocity * modifier;
 		},
+		getPos: function(){return{x:x,y:y};},
 	};
 };

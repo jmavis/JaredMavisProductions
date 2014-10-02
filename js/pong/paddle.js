@@ -1,8 +1,8 @@
-Pong.Objects.Paddle = function(canvas){
+Pong.Objects.Paddle = function(canvas, startingX, startingY){
 	var paddleWidth = 15;
 	var paddleHeight = 50;
-	var xPos = canvas.width-paddleWidth-20;
-	var yPos = canvas.height/2;
+	var xPos = startingX;
+	var yPos = startingY;
 	var velocity = PADDLE_VELOCITY;
 
 	function moveUp(timeModifier){
@@ -28,5 +28,6 @@ Pong.Objects.Paddle = function(canvas){
 		update: update,
 		moveUp: moveUp,
 		moveDown: moveDown,
+		getPos: function(){return{x:xPos,y:yPos};},
 	};
 }

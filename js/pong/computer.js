@@ -10,7 +10,9 @@ Pong.Objects.Computer = function(canvas, ball){
 	}
 
 	return {
+		type: "computer",
 		render: paddle.render,
 		update: update,
+		getCollisionRectangle: paddle.getCollisionRectangle,
 	};
 }

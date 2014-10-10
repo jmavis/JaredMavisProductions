@@ -25,18 +25,10 @@ Pong.Objects.Ball = function(canvas){
 				y = canvas.height;
 			}
 
-			if (x <= 0){
-				xVelocity *= -1;
-				x = 0
-			} else if (x >= canvas.width){
-				xVelocity *= -1;
-				x = canvas.width;
-			} 
-
-
 			x += xVelocity * modifier;
 			y += yVelocity * modifier;
 		},
 		getPos: function(){return{x:x,y:y};},
+		getCollisionArea: function(){return {x:x,y:y,width:radius, height:radius}},
 	};
 };

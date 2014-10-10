@@ -11,7 +11,9 @@ Pong.Objects.Player = function(canvas){
 	}
 
 	return {
+		type: "player",
 		render: paddle.render,
 		update: update,
+		getCollisionRectangle: paddle.getCollisionRectangle,
 	};
 }

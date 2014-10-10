@@ -29,5 +29,6 @@ Pong.Objects.Paddle = function(canvas, startingX, startingY){
 		moveUp: moveUp,
 		moveDown: moveDown,
 		getPos: function(){return{x:xPos,y:yPos};},
+		getCollisionRectangle: function(return {x: xPos, y:yPos, width:paddleWidth, height:paddleHeight};),
 	};
 }

@@ -39,6 +39,9 @@ addEventListener("keyup", function (e) {
 	delete keysDown[e.keyCode];
 }, false);
 
+var collisionEvents = {};
+
+
 var then = Date.now();
 var main = function () {
 	var now = Date.now();

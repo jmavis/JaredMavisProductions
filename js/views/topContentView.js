@@ -1,3 +1,0 @@
-var topContentView = baseView.extend({
-	
-});

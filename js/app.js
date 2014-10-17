@@ -38,19 +38,9 @@ generateProjectsMetaData = function(projects){
 
 var projectsInformationDebug = generateProjectsMetaData(projects);
 
-var posts = [{
-	"title": "hai",
-}, {
-	"title": "hai2",
-}, {
-	"title": "hai3",
-}, {
-	"title": "hai4",
-}]
-
 App.HomeRoute = Ember.Route.extend({
 	model : function(){
-		return posts;
+		return window.posts;
 	}
 });
 
@@ -70,13 +60,6 @@ App.SkillRoute = Ember.Route.extend({
 		return filterProjectsForAbility(projectsInformationDebug.abilitiesMapping, params.skill);	
 	}
 });
-
-posts = [{
-	title: "Website update in progress",
-	date: "August 10 2014",
-	author: "Jared",
-	content: "Hello, welcome to my site. I am currently in the process of updating everything to be based around ember.js. Feel free to look around.",
-}]
 
 App.FourOhFourRoute = Ember.Route.extend({
 	model: function(params){

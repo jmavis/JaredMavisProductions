@@ -15,26 +15,24 @@ generateProjectsMetaData = function(projects){
 	var projectsInformation = {
 		projects : projects,
 		abilitiesMapping : {},
+		skills: window.projectSkills,
+		tools: window.projectTools,
 	};
-	var tools = {};
-	var skills = {}
 	projects.map(function(project){
 		project.skills.map(function(skill){
 			if (!projectsInformation.abilitiesMapping[skill]) projectsInformation.abilitiesMapping[skill] = [];
 			projectsInformation.abilitiesMapping[skill].push(project);
-			skills[skill] = skill;
 		});
 		project.tools.map(function(tool){
 			if (!projectsInformation.abilitiesMapping[tool]) projectsInformation.abilitiesMapping[tool] = [];
 			projectsInformation.abilitiesMapping[tool].push(project);
-			tools[tool] = tool;			
 		});
 	});
-	projectsInformation.tools = Object.keys(tools);
-	projectsInformation.skills = Object.keys(skills);
 
 	return projectsInformation;
 };
+
+
 
 var projectsInformationDebug = generateProjectsMetaData(projects);
 

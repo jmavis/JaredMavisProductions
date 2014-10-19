@@ -133,3 +133,9 @@ window.projects = [{
 
 var projectSkills = _.uniq(_.flatten(_.pluck(projects, "skills")));
 var projectTools = _.uniq(_.flatten(_.pluck(projects, "tools")));
+
+window.ProjectsModel = {
+	filterProjectsForAbility: function(ability) {
+
+		},
+}

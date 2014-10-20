@@ -134,8 +134,32 @@ window.projects = [{
 var projectSkills = _.uniq(_.flatten(_.pluck(projects, "skills")));
 var projectTools = _.uniq(_.flatten(_.pluck(projects, "tools")));
 
+generateProjectsMetaData = function(projects){
+	var projectsInformation = {
+		projects : projects,
+		abilitiesMapping : {},
+		skills: window.projectSkills,
+		tools: window.projectTools,
+	};
+	projects.map(function(project){
+		project.skills.map(function(skill){
+			if (!projectsInformation.abilitiesMapping[skill]) projectsInformation.abilitiesMapping[skill] = [];
+			projectsInformation.abilitiesMapping[skill].push(project);
+		});
+		project.tools.map(function(tool){
+			if (!projectsInformation.abilitiesMapping[tool]) projectsInformation.abilitiesMapping[tool] = [];
+			projectsInformation.abilitiesMapping[tool].push(project);
+		});
+	});
+
+	return projectsInformation;
+};
+
+var projectsInformationDebug = generateProjectsMetaData(projects);
+
 window.ProjectsModel = {
 	filterProjectsForAbility: function(ability) {
-
-		},
+		if (!ability || ability === "all") return projects;
+		else return projectsInformationDebug.abilitiesMapping[ability];
+	},
 }

@@ -11,23 +11,22 @@ App.Router.map(function(){
  	this.route("fourOhFour", { path: "*path"});
 });
 
-
-
 App.HomeRoute = Ember.Route.extend({
 	model : function(){
 		return window.posts;
 	}
 });
 
-filterProjectsForAbility = function(abilityMap, ability){
-	if (!ability || ability === "all") return projects;
-	else return abilityMap[ability];
-}
+App.IndexRoute = Ember.Route.extend({
+    redirect: function() {
+        this.transitionTo('home'); 
+    }
+});
 
 App.ProjectsRoute = Ember.Route.extend({
-  model: function(params) {
-	return projectsInformationDebug;	
-  }
+    model: function(params) {
+        return projectsInformationDebug;	
+    }
 });
 
 App.SkillRoute = Ember.Route.extend({

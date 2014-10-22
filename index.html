@@ -34,6 +34,7 @@
 </script>
 
 <script type="text/x-handlebars" id="home">
+	<div class="page">
 	{{#each}}
 		<div class="post">
 			<div class="post-header">
@@ -47,6 +48,7 @@
 		</div>
 		<div>{{title}}</div>
 	{{/each}}
+	</div>
 </script>
 
 <script  type="text/x-handlebars" id="projects">
@@ -72,70 +74,79 @@
 </script>
 
 <script  type="text/x-handlebars" id="skill">
-{{#each}}
-	<div class="project">
-		<div class="project-content ui-block">
-			<div class="project-header">
-				<div class="project-roles">{{role}}</div>
-				<div class="project-company ui-block">
-					{{#if worked_for.website}}
-						<a {{bind-attr href=worked_for.website}}>{{worked_for.name}}</a>
-					{{else}}
-						{{worked_for.name}}
-					{{/if}}
+	<div class="page">
+	{{#each}}
+		<div class="project">
+			<div class="project-content ui-block">
+				<div class="project-header">
+					<div class="project-roles">{{role}}</div>
+					<div class="project-company ui-block">
+						{{#if worked_for.website}}
+							<a {{bind-attr href=worked_for.website}}>{{worked_for.name}}</a>
+						{{else}}
+							{{worked_for.name}}
+						{{/if}}
+					</div>
+					<div class="project-timeline ui-block">{{timeline}}</div>
 				</div>
-				<div class="project-timeline ui-block">{{timeline}}</div>
-			</div>
 
-			<div class="project-name ui-block">{{project_name}}</div>
-			
-			<ul class="project-accomplishments-list">
-				{{#each obj in this.accomplishments}}
-					<li>{{obj}}</li>
-				{{/each}}
-            </ul>
-            <div class="project-skills-container">
-            	<span>Skills:</span>
-           		{{skills}}
-            </div>
-            <div class="project-tools-container">
-            	<span>Tools:</span>
-           		{{tools}}
-            </div>
-            {{#if repository}}
-            	<a {{bind-attr href=repository}}>Repository</a>
-			{{/if}}
+				<div class="project-name ui-block">{{project_name}}</div>
+				
+				<ul class="project-accomplishments-list">
+					{{#each obj in this.accomplishments}}
+						<li>{{obj}}</li>
+					{{/each}}
+	            </ul>
+	            <div class="project-skills-container">
+	            	<span>Skills:</span>
+	           		{{skills}}
+	            </div>
+	            <div class="project-tools-container">
+	            	<span>Tools:</span>
+	           		{{tools}}
+	            </div>
+	            {{#if repository}}
+	            	<a {{bind-attr href=repository}}>Repository</a>
+				{{/if}}
+			</div>
 		</div>
+	{{/each}}
 	</div>
-{{/each}}
+
 </script>
 
 <script type="text/x-handlebars" id="fourOhFour">
-	<div>
+	<div class="page">
 		/{{path}} Page Not found
 	</div>
 </script>
 
 <script type="text/x-handlebars" id="resume">
-	<section>
-		<embed src="JaredMavis_Resume.pdf" style="width:98%; height:1100px;">
-	</section>
+	<div class="page">
+		<section>
+			<embed src="JaredMavis_Resume.pdf" style="width:98%; height:1100px;">
+		</section>
+	</div>
 </script>
 
 <script type="text/x-handlebars" id="about">
-	<img class="about-profile-piture ui-block" src="images/JaredMavis2014.png"></img>
-	<p class="about-content ui-block">
-		I am a software engineer who is looking to improve the world through the use of software and code-fu.<br>
-		I like to constantly learn new things and am currently focusing on web and mobile<br>
-		In my spare time I like to draw (<span><a href="http://jmavis.deviantart.com/">http://jmavis.deviantart.com/</a></span>), watch anime, play games and code.<br>
-		My github account can be found here <span><a href="https://github.com/jmavis">https://github.com/jmavis</a></span><br>
-		For some coding challenges I do check out here <span><a href="https://www.codeeval.com/public/c84244c65b7b4cd905b5f005f9762612dcf91e61/">CodeEval</a></span><br>
-	</p>
+	<div class="page">
+		<img class="about-profile-piture ui-block" src="images/JaredMavis2014.png"></img>
+		<p class="about-content ui-block">
+			I am a software engineer who is looking to improve the world through the use of software and code-fu.<br>
+			I like to constantly learn new things and am currently focusing on web and mobile<br>
+			In my spare time I like to draw (<span><a href="http://jmavis.deviantart.com/">http://jmavis.deviantart.com/</a></span>), watch anime, play games and code.<br>
+			My github account can be found here <span><a href="https://github.com/jmavis">https://github.com/jmavis</a></span><br>
+			For some coding challenges I do check out here <span><a href="https://www.codeeval.com/public/c84244c65b7b4cd905b5f005f9762612dcf91e61/">CodeEval</a></span><br>
+		</p>
+	</div>
 </script>
 
 <script type="text/x-handlebars" id="contact">
-	<h1>Contact Me</h1>
-	<img src="images/EmailPic.png" alt="JaredMavis [at] Outlook dot com">
+	<div class="page">
+		<h1>Contact Me</h1>
+		<img src="images/EmailPic.png" alt="JaredMavis [at] Outlook dot com">
+	</div>
 </script>
 
 	

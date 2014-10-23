@@ -3,7 +3,6 @@
 }
 
 .project-timeline{
-	float: right;
 	font-size: 1.5em;
 }
 
@@ -13,6 +12,7 @@
 
 .project-content{
 	margin-left: 10px;
+	padding-bottom: 20px;
 }
 
 .project-name{

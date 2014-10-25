@@ -8,7 +8,7 @@ window.projects = [{
 	},
 	"role": "Member of Technical Staff",
 	"timeline": "September 2013-Present",
-	"skills": ["Javascript", "Objective C", "iOS", "Java", "Android", "iBeacons", "Location", "Cordova"],
+	"skills": ["Javascript", "Objective C", "iOS", "Java", "Android", "iBeacons", "Location", "Cordova", "Test Automation", "Mocha", "Chai", "PhantomJS"],
 	"tools": ["JIRA", "Bitbucket", "Appium", "Bluebird.js", "Backbone.js", "jQuery", "Git", "Kanban"],
 	"accomplishments": ["Working using Cordova for a web app on iOS and Android",
 						"Handling all native Objective-C and Java programming in addition to the JavaScript web app",

@@ -8,7 +8,7 @@ window.projects = [{
 	},
 	"role": "Member of Technical Staff",
 	"timeline": "September 2013-Present",
-	"skills": ["Javascript", "Objective C", "iOS", "Java", "Android", "iBeacons", "Location", "Cordova", "Test Automation", "Mocha", "Chai", "PhantomJS"],
+	"skills": ["Javascript", "Objective C", "iOS", "Java", "Android", "iBeacons", "Location", "Cordova", "Test Automation", "Mocha", "Chai", "Phantom.js"],
 	"tools": ["JIRA", "Bitbucket", "Appium", "Bluebird.js", "Backbone.js", "jQuery", "Git", "Kanban"],
 	"accomplishments": ["Working using Cordova for a web app on iOS and Android",
 						"Handling all native Objective-C and Java programming in addition to the JavaScript web app",
@@ -131,8 +131,8 @@ window.projects = [{
 	"repository": null,
 }];
 
-var projectSkills = _.uniq(_.flatten(_.pluck(projects, "skills")));
-var projectTools = _.uniq(_.flatten(_.pluck(projects, "tools")));
+var projectSkills = _.sortBy(_.uniq(_.flatten(_.pluck(projects, "skills"))));
+var projectTools = _.sortBy(_.uniq(_.flatten(_.pluck(projects, "tools"))));
 
 generateProjectsMetaData = function(projects){
 	var projectsInformation = {
@@ -141,16 +141,25 @@ generateProjectsMetaData = function(projects){
 		skills: window.projectSkills,
 		tools: window.projectTools,
 	};
+
 	projects.map(function(project){
 		project.skills.map(function(skill){
 			if (!projectsInformation.abilitiesMapping[skill]) projectsInformation.abilitiesMapping[skill] = [];
 			projectsInformation.abilitiesMapping[skill].push(project);
 		});
+
+		project.skills = _.sortBy(project.skills).join(', ');
+
+
 		project.tools.map(function(tool){
 			if (!projectsInformation.abilitiesMapping[tool]) projectsInformation.abilitiesMapping[tool] = [];
 			projectsInformation.abilitiesMapping[tool].push(project);
 		});
+		project.tools = _.sortBy(project.tools).join(', ');
 	});
+
+	projectsInformation.skills.push("All");
+	projectsInformation.tools.push("All");
 
 	return projectsInformation;
 };
@@ -159,7 +168,7 @@ var projectsInformationDebug = generateProjectsMetaData(projects);
 
 window.ProjectsModel = {
 	filterProjectsForAbility: function(ability) {
-		if (!ability || ability === "all") return projects;
+		if (!ability || ability === "All") return projects;
 		else return projectsInformationDebug.abilitiesMapping[ability];
 	},
 }

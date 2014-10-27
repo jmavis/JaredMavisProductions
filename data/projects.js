@@ -168,7 +168,7 @@ var projectsInformationDebug = generateProjectsMetaData(projects);
 
 window.ProjectsModel = {
 	filterProjectsForAbility: function(ability) {
-		if (!ability || ability === "All") return projects;
+		if (!ability || ability === "all") return projects;
 		else return projectsInformationDebug.abilitiesMapping[ability];
 	},
 }

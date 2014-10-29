@@ -57,7 +57,7 @@
 	<div class="skills-filter">
 		{{#each skill in skills}}
 			{{#link-to 'skill' skill}}
-				<span class="btn btn-default ">{{skill}}</span>
+				<span class="btn btn-default">{{skill}}</span>
 			{{/link-to}}
 		{{/each}}
 	</div>
@@ -117,7 +117,10 @@
 
 <script type="text/x-handlebars" id="fourOhFour">
 	<div class="page">
+		<div>
 		/{{path}} Page Not found
+		</div>
+		<div class = "btn btn-default">{{#link-to 'home'}}Go Home{{/link-to}}</li>
 	</div>
 </script>
 

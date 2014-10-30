@@ -27,3 +27,8 @@
 .skills-filters-container{
 	padding-bottom: 20px;
 }
+
+.skills-filters-container .active .btn {
+	background: #2A6496;
+	color: white;
+}

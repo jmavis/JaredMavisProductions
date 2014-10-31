@@ -52,29 +52,30 @@
 </script>
 
 <script  type="text/x-handlebars" id="projects">
-<div class="skills-filters-container">
-	<h2>Skills</h2>
-	<div class="skills-filter">
-		{{#each skill in skills}}
-			{{#link-to 'skill' skill}}
-				<span class="btn btn-default">{{skill}}</span>
-			{{/link-to}}
-		{{/each}}
+	<div class="page">
+		<div class="skills-filters-container">
+			<h2>Skills</h2>
+			<div class="skills-filter">
+				{{#each skill in skills}}
+					{{#link-to 'skill' skill}}
+						<span class="btn btn-default">{{skill}}</span>
+					{{/link-to}}
+				{{/each}}
+			</div>
+			<h2>Tools</h2>
+			<div class="tools-filter">
+				{{#each tool in tools}}
+					{{#link-to 'skill' tool}}
+						<span class="btn btn-default">{{tool}}</span>
+					{{/link-to}}
+				{{/each}}
+			</div>
+		</div>
+		{{outlet}}
 	</div>
-	<h2>Tools</h2>
-	<div class="tools-filter">
-		{{#each tool in tools}}
-			{{#link-to 'skill' tool}}
-				<span class="btn btn-default">{{tool}}</span>
-			{{/link-to}}
-		{{/each}}
-	</div>
-</div>
-{{outlet}}
 </script>
 
 <script  type="text/x-handlebars" id="skill">
-	<div class="page">
 	{{#each}}
 		<div class="project">
 			<div class="project-content ui-block">
@@ -111,8 +112,6 @@
 			</div>
 		</div>
 	{{/each}}
-	</div>
-
 </script>
 
 <script type="text/x-handlebars" id="fourOhFour">

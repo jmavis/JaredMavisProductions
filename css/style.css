@@ -17,8 +17,6 @@ h2 {
 }
 
 body {
-	margin-right: 30px;
-	margin-left: 30px;
 	text-align:left;
 	font-size:13px;
 	font-family:arial, helvetica, sens-serif;
@@ -26,8 +24,8 @@ body {
 }
 
 .page { 
-	margin-left: 20px;
-	margin-right: 20px;
+	margin-right: 50px;
+	margin-left: 50px;
 }
 
 .header{
@@ -50,6 +48,16 @@ a{
 
 td{
 	border-bottom: 1px dashed #000;
+}
+
+.navbar{
+	background: -webkit-linear-gradient(#cfcfcf  , #e6e6e6); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#cfcfcf  , #e6e6e6); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#cfcfcf  , #e6e6e6); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#cfcfcf  , #e6e6e6); /* Standard syntax */
+	padding-left: 30px;
+	padding-right: 30px;
+	border-bottom: solid grey;
 }
 
 #container{

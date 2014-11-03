@@ -51,10 +51,6 @@ td{
 }
 
 .navbar{
-	background: -webkit-linear-gradient(#cfcfcf  , #e6e6e6); /* For Safari 5.1 to 6.0 */
-	background: -o-linear-gradient(#cfcfcf  , #e6e6e6); /* For Opera 11.1 to 12.0 */
-	background: -moz-linear-gradient(#cfcfcf  , #e6e6e6); /* For Firefox 3.6 to 15 */
-	background: linear-gradient(#cfcfcf  , #e6e6e6); /* Standard syntax */
 	padding-left: 30px;
 	padding-right: 30px;
 	border-bottom: solid grey;

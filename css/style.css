@@ -32,22 +32,8 @@ body {
 	font-size: 30px;
 }
 
-footer {
-	position: fixed;
-	bottom: 0;
-}
-
-label{
-	display:inline-block;
-	width:150px;
-}
-
 a{
 	text-decoration:none;
-}
-
-td{
-	border-bottom: 1px dashed #000;
 }
 
 .navbar{

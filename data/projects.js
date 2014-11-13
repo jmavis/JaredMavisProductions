@@ -1,5 +1,4 @@
 window.projects = [{
-	"id": 0,
 	"project_image": null,
 	"project_name": "Project Undisclosed Currently",
 	"worked_for": {
@@ -17,7 +16,6 @@ window.projects = [{
 						"Developed coding standards and project management tools"],
 	"repository": null,
 }, {
-	"id": 1,
 	"project_image": "images/OneDayLogo.png",
 	"project_name": "One Day Game",
 	"worked_for": {
@@ -33,7 +31,6 @@ window.projects = [{
 						"Responsible for creating and maintaining UML class, state and sequence diagrams"],
 	"repository": "https://github.com/10DaysLeftToLive/TimeWhaleEngine",
 }, {
-	"id": 2,
 	"project_image": "images/TerrachanicsLogo.png",
 	"project_name": "Terrachanics",
 	"worked_for": {
@@ -47,7 +44,6 @@ window.projects = [{
 	"accomplishments": ["Performed programming tasks involving mobile/pc controls, user interface and Facebook integration"],
 	"repository": "https://github.com/kuvick/DOEGame",
 }, {
-	"id": 3,
 	"project_image": "images/BoxedMeetingLogo.png",
 	"project_name": "Boxed Meeting App",
 	"worked_for": {
@@ -63,7 +59,6 @@ window.projects = [{
 						"Designed System for dynamically sizing elements and text to account for Android screen size vairation"],
 	"repository": "https://github.com/jmavis/BoxedMeeting",
 }, {
-	"id": 4,
 	"project_image": null,
 	"project_name": "JaredMavis.com",
 	"worked_for": {
@@ -78,7 +73,6 @@ window.projects = [{
 						"Learned Ember and handlebars along with getting experience in using bootstrap.js"],
 	"repository": "https://github.com/jmavis/JaredMavisProductions",
 }, {
-	"id": 5,
 	"project_image": "images/EchoLogo.png",
 	"project_name": "Echo",
 	"worked_for": {
@@ -95,7 +89,6 @@ window.projects = [{
 						"Worked in a team of 2"],
 	"repository": null,
 }, {
-	"id": 6,
 	"project_image": "images/MantisVideoLogo.png",
 	"project_name": "Mantis Video",
 	"worked_for": {
@@ -113,7 +106,6 @@ window.projects = [{
 						"Worked in a team of 5"],
 	"repository": null,
 }, {
-	"id": 7,
 	"project_image": "images/SlugmoodLogo.png",
 	"project_name": "Slugmood",
 	"worked_for": {

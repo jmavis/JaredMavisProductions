@@ -12,6 +12,7 @@ window.projects = [{
 	"accomplishments": ["Working using Cordova for a web app on iOS and Android",
 						"Handling all native Objective-C and Java programming in addition to the JavaScript web app",
 						"Using Backbone, Bluebird, jQuery, and Require.",
+						"Pushed for and created automated testing for client project independently",
 						"Developed location matching algorithms using Android and iOS location APIs",
 						"Developed coding standards and project management tools",],
 	"repository": null,

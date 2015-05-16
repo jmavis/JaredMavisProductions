@@ -1,6 +1,6 @@
 window.projects = [{
 	"project_image": null,
-	"project_name": "Project Undisclosed Currently",
+	"project_name": "Crowdpoll",
 	"worked_for": {
 		"name": "Cloud Parity",
 		"website": "http://www.cloudparity.com",
@@ -14,7 +14,8 @@ window.projects = [{
 						"Using Backbone, Bluebird, jQuery, and Require.",
 						"Pushed for and created automated testing for client project independently",
 						"Developed location matching algorithms using Android and iOS location APIs",
-						"Developed coding standards and project management tools",],
+						"Developed coding standards and project management tools",
+						"Available on Android and iOS"],
 	"repository": null,
 }, {
 	"project_image": "images/OneDayLogo.png",

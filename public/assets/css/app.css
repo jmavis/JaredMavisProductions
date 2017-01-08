@@ -4,6 +4,13 @@
 }
 
 body {
-	/* Add this for the footer as noted here: http://getbootstrap.com/components/#navbar-fixed-bottom */ 
+	/* Add this for the footer as noted here: http://getbootstrap.com/components/#navbar-fixed-bottom */
 	padding-bottom: 70px;
+}
+
+/*
+ 	Styling for the current active section in the header
+*/
+.active {
+	font-weight: bold;
 }

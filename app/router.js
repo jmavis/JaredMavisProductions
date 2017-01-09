@@ -10,7 +10,6 @@ Router.map(function() {
   this.route('home');
   this.route('projects');
   this.route('about');
-  this.route('contact');
   this.route('resume');
   this.route("fourOhFour", { path: "*path"});
 });

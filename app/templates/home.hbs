@@ -1,0 +1,15 @@
+<div class="page">
+  {{#each model as | post |}}
+    <div class="post">
+      <div class="post-header">
+        <div class="post-title ui-block">{{post.title}}</div>
+        <div class="post-date">{{post.date}}</div>
+        <div class="post-author">{{post.author}}</div>
+      </div>
+      <div class="post-content">
+        {{{post.content}}}
+      </div>
+    </div>
+  {{/each}}
+</div>
+{{outlet}}

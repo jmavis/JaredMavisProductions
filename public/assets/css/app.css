@@ -1,0 +1,29 @@
+.page {
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+body {
+	/* Add this for the footer as noted here: http://getbootstrap.com/components/#navbar-fixed-bottom */
+	padding-bottom: 70px;
+}
+
+/*
+ 	Styling for the current active section in the header
+*/
+.active {
+	font-weight: bold;
+}
+
+.post-title {
+	font-size: 2em;
+}
+
+.post-date {
+	float: right;
+	font-size: 1.5em;
+}
+
+.post-author {
+	font-size: 1.25em;
+}

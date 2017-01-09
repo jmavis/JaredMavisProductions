@@ -1,0 +1,34 @@
+.project-roles{
+	font-size: 2em;
+}
+
+.project-timeline{
+	font-size: 1.5em;
+}
+
+.project-company{
+	font-size: 1.5em;
+}
+
+.project-content{
+	margin-left: 10px;
+	padding-bottom: 20px;
+}
+
+.project-name{
+	font-size: 1.5em;
+}
+
+.project{
+	border-top: solid;
+	padding-left: 20px;
+}
+
+.skills-filters-container{
+	padding-bottom: 20px;
+}
+
+.skills-filters-container .active .btn {
+	background: #2A6496;
+	color: white;
+}

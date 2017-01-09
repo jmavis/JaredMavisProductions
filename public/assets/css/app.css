@@ -14,3 +14,16 @@ body {
 .active {
 	font-weight: bold;
 }
+
+.post-title {
+	font-size: 2em;
+}
+
+.post-date {
+	float: right;
+	font-size: 1.5em;
+}
+
+.post-author {
+	font-size: 1.25em;
+}
